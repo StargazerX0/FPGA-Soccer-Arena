@@ -1,0 +1,140 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Apr  6 14:24:47 2024
+| Host         : NERO running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file TopStudent_control_sets_placed.rpt
+| Design       : TopStudent
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    69 |
+| Unused register locations in slices containing registers |   168 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            3 |
+|      4 |            2 |
+|      6 |            2 |
+|      8 |            9 |
+|     10 |            5 |
+|     12 |            5 |
+|     14 |            3 |
+|    16+ |           40 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             250 |           78 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |            1324 |          190 |
+| Yes          | No                    | No                     |             222 |           32 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             532 |          101 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------------------------------+-------------------------------------------+--------------------------------------------+------------------+----------------+
+|                 Clock Signal                 |               Enable Signal               |              Set/Reset Signal              | Slice Load Count | Bel Load Count |
++----------------------------------------------+-------------------------------------------+--------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG                               | my_state/TX_reg[0][0]                     | debouncer_btnC/SR[0]                       |                1 |              2 |
+| ~clk_6p25m_0                                 |                                           |                                            |                1 |              2 |
+| ~clk_6p25m_BUFG                              |                                           |                                            |                1 |              2 |
+|  clk_IBUF_BUFG                               | my_state/TX_reg[0][0]                     | sw0_IBUF                                   |                1 |              4 |
+|  clk_60hz                                    |                                           |                                            |                2 |              4 |
+|  slow_clock                                  |                                           |                                            |                3 |              6 |
+|  engine/p1_pos_30hz/new_xstart[6]_i_4_n_0    |                                           |                                            |                2 |              6 |
+|  engine/p1_pos_30hz/new_xstart[6]_i_4_n_0    | engine/b_pos_30hz/new_ystart_reg[7]_13[0] | engine/b_pos_30hz/new_ystart_reg[7]_3[0]   |                3 |              8 |
+|  slow_clock                                  | engine/b_pos_30hz/p2_count_reg[0][0]      | my_state/SR[0]                             |                4 |              8 |
+|  engine/p2_pos_30hz/new_xstart[6]_i_3__0_n_0 | engine/b_pos_30hz/new_ystart_reg[7]_14[0] | engine/b_pos_30hz/rst1                     |                3 |              8 |
+|  engine/p2_pos_30hz/new_xstart[6]_i_3__0_n_0 | engine/b_pos_30hz/new_ystart_reg[7]_14[0] | engine/b_pos_30hz/SR[0]                    |                3 |              8 |
+|  clk_IBUF_BUFG                               | my_state/player2_U0                       | engine/seg2_reg[5]                         |                1 |              8 |
+|  engine/p1_pos_30hz/new_xstart[6]_i_4_n_0    | engine/b_pos_30hz/new_xstart_reg[6]_1     | engine/b_pos_30hz/new_xstart_reg[3]_0      |                2 |              8 |
+|  engine/p1_pos_30hz/new_xstart[6]_i_4_n_0    | engine/b_pos_30hz/new_ystart_reg[7]_13[0] | engine/b_pos_30hz/rst1                     |                2 |              8 |
+|  slow_clock                                  | engine/b_pos_30hz/p1_count_reg[0][0]      | my_state/SR[0]                             |                2 |              8 |
+|  clk_IBUF_BUFG                               | my_state/player2_U0                       | engine/seg1_reg[5]                         |                3 |              8 |
+|  engine/p1_pos_30hz/c3hz/counter_reg[4]      | engine/p1_pos_30hz/counter[4]_i_2_n_0     | engine/p1_pos_30hz/counter[4]_i_1_n_0      |                2 |             10 |
+|  engine/p2_pos_30hz/c3hz/counter_reg[4]      | engine/p2_pos_30hz/counter[4]_i_2__0_n_0  | engine/p2_pos_30hz/counter[4]_i_1__0_n_0   |                2 |             10 |
+|  s_clock_BUFG                                |                                           | my_state/count[5]_i_1_n_0                  |                2 |             10 |
+|  s_clock_BUFG                                |                                           | my_right_debounce/count[0]                 |                2 |             10 |
+|  slow_clock                                  | engine/p1_pos_30hz/pixel_data_reg[11]     | engine/pixel_data0_in[15]                  |                4 |             10 |
+|  clock_1hz/count_reg[5]_0                    | match_count/E[0]                          | my_state/SR[0]                             |                2 |             12 |
+|  clk_25m_BUFG                                |                                           | my_state/led_reg[0]                        |                3 |             12 |
+|  clk_1k                                      |                                           | engine/b_pos_30hz/rst1                     |                6 |             12 |
+|  s_clock_BUFG                                |                                           |                                            |                4 |             12 |
+|  s_clock_BUFG                                |                                           | my_placement/count[10]_i_1__0_n_0          |                3 |             12 |
+|  engine/p2_pos_30hz/new_xstart[6]_i_3__0_n_0 | engine/b_pos_30hz/new_xstart_reg[6]_9[0]  |                                            |                3 |             14 |
+|  clk_1k                                      |                                           |                                            |                4 |             14 |
+|  s_clock_BUFG                                |                                           | sw0_IBUF                                   |                4 |             14 |
+|  clk_60hz                                    | engine/bs/new_xstart_reg[7][0]            | engine/b_pos_30hz/rst1                     |                3 |             16 |
+|  clk_60hz                                    |                                           | engine/b_pos_30hz/rst1                     |                3 |             16 |
+|  clock_1hz/count_reg[5]_0                    |                                           |                                            |                4 |             20 |
+|  s_clock_BUFG                                |                                           | my_state/SS[0]                             |                3 |             22 |
+|  slow_clock                                  | engine/p1_pos_30hz/pixel_data_reg[10]_1   | engine/pixel_data0_in[10]                  |                6 |             22 |
+|  clk_1k                                      | engine/ub1/counter[16]_i_2_n_0            | engine/ub1/counter[16]                     |                4 |             32 |
+|  clk_1k                                      | engine/ub2/counter[16]_i_2__0_n_0         | engine/ub2/counter[16]                     |                4 |             32 |
+|  clk_25m_BUFG                                | my_state/oled_data_reg[15][0]             | coord/SS[0]                                |               12 |             32 |
+|  clk_IBUF_BUFG                               |                                           | debouncer_btnC/timer[16]_i_1__3_n_0        |                4 |             34 |
+|  clk_IBUF_BUFG                               |                                           | debouncer_btnL/timer[16]_i_1__1_n_0        |                4 |             34 |
+|  clk_IBUF_BUFG                               |                                           | debouncer_btnR/timer[16]_i_1__0_n_0        |                7 |             34 |
+| ~clk_6p25m_0                                 |                                           | engine/unit_oled/frame_counter[16]_i_1_n_0 |                5 |             34 |
+| ~clk_6p25m_BUFG                              |                                           | unit_oled/frame_counter[16]_i_1__0_n_0     |                5 |             34 |
+|  clk_IBUF_BUFG                               |                                           | debouncer_btnU/timer[16]_i_1_n_0           |                4 |             34 |
+| ~clk_6p25m_0                                 | engine/unit_oled/delay[0]_i_1_n_0         |                                            |                5 |             40 |
+| ~clk_6p25m_BUFG                              | unit_oled/delay[0]_i_1__0_n_0             |                                            |                5 |             40 |
+|  clk_IBUF_BUFG                               | my_centre_debounce/COUNTER                | my_centre_debounce/button_released_reg_n_0 |                7 |             50 |
+|  clk_IBUF_BUFG                               | my_left_debounce/COUNTER                  | my_left_debounce/button_released_reg_n_0   |                7 |             50 |
+|  clk_IBUF_BUFG                               | my_right_debounce/COUNTER                 | my_right_debounce/button_released_reg_n_0  |                7 |             50 |
+|  clk_25m_BUFG                                |                                           |                                            |               15 |             52 |
+|  clk_IBUF_BUFG                               |                                           | engine/clock_60hz/count[0]_i_1__3_n_0      |                8 |             64 |
+|  clk_IBUF_BUFG                               |                                           | engine/clock_45hz/count[0]_i_1__6_n_0      |                8 |             64 |
+|  clk_IBUF_BUFG                               |                                           | engine/clock_30hz/count[0]_i_1__7_n_0      |                8 |             64 |
+|  clk_IBUF_BUFG                               |                                           | engine/clock_25m/clear                     |                8 |             64 |
+|  clk_60hz                                    |                                           | engine/p1_pos_30hz/c3hz/clear              |                8 |             64 |
+|  clk_60hz                                    |                                           | engine/p2_pos_30hz/c3hz/clear              |                8 |             64 |
+|  clk_IBUF_BUFG                               |                                           | engine/clock_15hz/count[0]_i_1__8_n_0      |                8 |             64 |
+| ~clk_6p25m_BUFG                              | unit_oled/state                           |                                            |               10 |             64 |
+| ~clk_6p25m_0                                 | engine/unit_oled/state                    |                                            |                9 |             64 |
+|  clk_IBUF_BUFG                               |                                           | engine/clock_1k/count[0]_i_1__2_n_0        |                8 |             64 |
+|  clk_IBUF_BUFG                               |                                           | clock_6p25m/count[0]_i_1__12_n_0           |                8 |             64 |
+|  clk_IBUF_BUFG                               |                                           | clock_25m/count[0]_i_1__11_n_0             |                8 |             64 |
+|  clk_IBUF_BUFG                               |                                           | clock_1hz/count[0]_i_1__10_n_0             |                8 |             64 |
+|  slow_clock                                  | engine/b_pos_30hz/E[0]                    | my_state/SR[0]                             |                8 |             64 |
+|  clk_IBUF_BUFG                               |                                           | engine/clock_6p25m/count[0]_i_1__5_n_0     |                8 |             64 |
+|  clk_IBUF_BUFG                               |                                           | my_1000hz_clk/count[0]_i_1__9_n_0          |                8 |             64 |
+|  slow_clock                                  | my_state/count_reg[31]                    | engine/count[0]_i_1__1_n_0                 |                8 |             64 |
+| ~clk_6p25m_0                                 |                                           | engine/unit_oled/spi_word[39]_i_1_n_0      |               15 |             90 |
+| ~clk_6p25m_BUFG                              |                                           | unit_oled/spi_word[39]_i_1__0_n_0          |               16 |             90 |
+|  clk_IBUF_BUFG                               |                                           |                                            |               42 |            132 |
++----------------------------------------------+-------------------------------------------+--------------------------------------------+------------------+----------------+
+
+
